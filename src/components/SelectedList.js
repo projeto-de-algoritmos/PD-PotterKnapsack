@@ -5,7 +5,6 @@ import ListItemAvatar from '@mui/material/ListItemAvatar';
 import ListItemText from '@mui/material/ListItemText';
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
-import { ptBR } from '../utils/ptBR.js'
 
 export default function SelectedList(props) {
 
@@ -16,7 +15,7 @@ export default function SelectedList(props) {
                     <Avatar src={require('../assets/imagens/' + item.name.toLowerCase() + '.png')} />
                 </ListItemAvatar>
                 <ListItemText
-                    primary={ptBR[item.name]}
+                    primary={item.name}
                     secondary={item.durability}
                 />
             </ListItem>

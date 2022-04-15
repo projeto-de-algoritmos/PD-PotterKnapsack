@@ -1,4 +1,4 @@
-const options = require("../data/desasters.json");
+const options = require("../data/events.json");
 const items = require("../data/items.json");
 
 export const knapSack = (selectedDesasters, bagCapacity) => {
@@ -21,17 +21,17 @@ export const knapSack = (selectedDesasters, bagCapacity) => {
 
 function calculateWeights(selectedDesasters) {
   let weights = {
-    armor: 0,
+    protection: 0,
     attack: 0,
-    uv_protection: 0,
-    freshness: 0,
+    mobility: 0,
+    stealth: 0,
   };
   selectedDesasters.forEach((optionIndex) => {
     // console.log(options[optionIndex].name);
-    weights["armor"] += options[optionIndex].armor;
+    weights["protection"] += options[optionIndex].protection;
     weights["attack"] += options[optionIndex].attack;
-    weights["uv_protection"] += options[optionIndex].uv_protection;
-    weights["freshness"] += options[optionIndex].freshness;
+    weights["mobility"] += options[optionIndex].mobility;
+    weights["stealth"] += options[optionIndex].stealth;
   });
 
   return weights;
@@ -47,17 +47,17 @@ function orderByPriority(selectedDesasters) {
   let weights = calculateWeights(selectedDesasters);
 
   weighted_items.forEach((item) => {
-    item["armor"] *= weights["armor"];
+    item["protection"] *= weights["protection"];
     item["attack"] *= weights["attack"];
-    item["uv_protection"] *= weights["uv_protection"];
-    item["freshness"] *= weights["freshness"];
+    item["mobility"] *= weights["mobility"];
+    item["stealth"] *= weights["stealth"];
   });
 
   return weighted_items.sort((a, b) => {
     let priorityA =
-      a["armor"] + a["attack"] + a["uv_protection"] + a["freshness"];
+      a["protection"] + a["attack"] + a["mobility"] + a["stealth"];
     let priorityB =
-      b["armor"] + b["attack"] + b["uv_protection"] + b["freshness"];
+      b["protection"] + b["attack"] + b["mobility"] + b["stealth"];
 
     if (priorityA > priorityB) {
       return -1;

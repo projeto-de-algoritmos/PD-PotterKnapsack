@@ -8,7 +8,6 @@ import BagSelector from "../components/BagSelector";
 import CustomizedButton from "../components/Button";
 import ResultDialog from "../components/resultDialog";
 import { knapSack } from "../utils/knapsack";
-import {ptBR} from '../utils/ptBR.js'
 import "./App.css";
 
 function App() {
@@ -31,8 +30,8 @@ function App() {
     return answer
   }
   const handleSubmitClick = () => {
-    const result = knapSack(choosedDesasters, bagCapacity).map((el) => `${ptBR[el.item]} (${parseFloat(el.durability).toFixed(2)}%)`)
-    const formattedSelectedItems = selectedItems.map((el) => `${ptBR[el.name]} (${el.durability})`)
+    const result = knapSack(choosedDesasters, bagCapacity).map((el) => `${el.item} (${parseFloat(el.durability).toFixed(2)}%)`)
+    const formattedSelectedItems = selectedItems.map((el) => `${el.name} (${el.durability})`)
 
     if (equals(result, formattedSelectedItems)) setResultContent("Parabéns, você sobreviveu!!")
     else setResultContent(`Infelizmente você não fez a melhor escolha. Os melhores equipamentos seriam:\n${answerFormat(result)}`)
