@@ -1,10 +1,12 @@
 import * as React from 'react';
+import { COLORS } from "../assets/consts/colors";
 import Box from '@mui/material/Box';
 import Grid from "@mui/material/Grid";
 import CustomizedCard from "../components/Card";
 import { Typography } from '@mui/material';
 
 export default function Items(props) {
+    const ERROR_MESSAGE = "A mochila está cheia, retire algum item para adicionar outro."
     const items = require("../data/items.json");
     const [errorMessage, setErrorMessage] = React.useState("")
     var weights = calculateTotalWeight()
@@ -27,18 +29,18 @@ export default function Items(props) {
 
     function calculateRemainingWeight(arr, item) {
         const newWeight = items.find((el) => el.name === item).weight
-        let itemDurability = 100;
 
         if (weights + newWeight > props.bagCapacity) {
-            itemDurability = ((props.bagCapacity - weights) / newWeight) * 100;
-            weights = props.bagCapacity
+            setErrorMessage("Esse item não pode ser adicionado porque extrapola o peso restante da mochila.")
+            return [...arr]
         } else
             weights += newWeight
 
         if (weights === props.bagCapacity)
             props.callbackWeight(true)
-
-        return [...arr, {name: item, durability: parseFloat(itemDurability).toFixed(2) + "%"}]
+            
+        setErrorMessage("")
+        return [...arr, {name: item}]
     }
 
     function calculateIsFull(selectedItems){
@@ -58,7 +60,6 @@ export default function Items(props) {
 
         if (index === -1 && !props.isFull) {
             props.callback(calculateRemainingWeight(props.selectedItems, e.target.alt))
-            setErrorMessage("")
         }
         else if (index !== -1) {
             let newSelectedItems = []
@@ -75,11 +76,10 @@ export default function Items(props) {
             console.log(newSelectedItems)
             props.callback(newSelectedItems)
             props.callbackWeight(calculateIsFull(newSelectedItems))
-
             setErrorMessage("")
         }
         else{
-            setErrorMessage("A mochila está cheia, retire algum item para adicionar outro.")
+            setErrorMessage(ERROR_MESSAGE)
         }
     }
 
@@ -108,8 +108,8 @@ export default function Items(props) {
                 {cardItems()}
 
             </Grid>
-            <Box sx={{ display: "flex", justifyContent: "center" , alignItems: "center", height: "5%", textAlign: "center"}}>
-                <Typography align="center" sx={{color: "red", variant: "caption" }}>{errorMessage}</Typography>
+            <Box sx={{ display: "flex", justifyContent: "center" , alignItems: "center", height: "5%", textAlign: "center", marginLeft: "10%"}}>
+                <Typography align="center" sx={{color: COLORS.defaultColor, fontSize: "20px", fontWeight: "900" }}>{errorMessage}</Typography>
             </Box>
         </Box>
     )

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { COLORS } from "../assets/consts/colors";
 import Box from '@mui/material/Box';
 import FormLabel from '@mui/material/FormLabel';
 import FormControl from '@mui/material/FormControl';
@@ -6,13 +7,13 @@ import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 
-export default function DesasterCheckbox(props) {
+export default function ScenarioCheckbox(props) {
   const [checked, setChecked] = React.useState([false, false, false, false]);
 
   React.useEffect(() => {
     const callbackIndicesArray = checked.flatMap((bool, index) => bool ? index : [])
     props.callback(callbackIndicesArray)
-  }, [checked, props])
+  }, [checked])
 
   const handleDragoesChange = (event) => {
     setChecked([event.target.checked, checked[1], checked[2], checked[3]]);
@@ -36,13 +37,17 @@ export default function DesasterCheckbox(props) {
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
+      justifyContent: "center",
+      backgroundColor: COLORS.defaultColor,
+      borderRadius: "10%",
+      marginLeft: "10%"
     }}>
       <FormControl
         component="fieldset"
         sx={{ m: 2, alignItems: "center", textAlign: "center" }}
         variant="standard"
       >
-        <FormLabel component="legend" sx={{ maxWidth: "95%", height: "auto", alignSelf: "center" }}>Selecione os possíveis desastres pós-apocalípticos</FormLabel>
+        <FormLabel component="legend" sx={{ maxWidth: "95%", height: "auto", alignSelf: "center" }}>Selecione o cenário do jogo</FormLabel>
         <FormGroup>
           <FormControlLabel
             control={

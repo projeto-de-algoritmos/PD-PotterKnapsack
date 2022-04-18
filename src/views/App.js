@@ -3,10 +3,11 @@ import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Items from "../components/Items";
 import SelectedList from "../components/SelectedList";
-import DesasterCheckbox from "../components/DesasterCheckBox";
+import ScenarioCheckbox from "../components/ScenarioCheckBox";
 import BagSelector from "../components/BagSelector";
 import CustomizedButton from "../components/Button";
 import ResultDialog from "../components/resultDialog";
+import background from "../assets/imagens/bg.png";
 import { knapSack } from "../utils/knapsack";
 import "./App.css";
 
@@ -30,16 +31,14 @@ function App() {
     return answer
   }
   const handleSubmitClick = () => {
-    const result = knapSack(choosedDesasters, bagCapacity).map((el) => `${el.item} (${parseFloat(el.durability).toFixed(2)}%)`)
-    const formattedSelectedItems = selectedItems.map((el) => `${el.name} (${el.durability})`)
+    const result = knapSack(choosedDesasters, bagCapacity).map((el) => `${el.item}`)
 
-    if (equals(result, formattedSelectedItems)) setResultContent("Parabéns, você sobreviveu!!")
-    else setResultContent(`Infelizmente você não fez a melhor escolha. Os melhores equipamentos seriam:\n${answerFormat(result)}`)
+    setResultContent(`Ainda não implementado, knapsack:\n${answerFormat(result)}`)
     setIsOpenDialog(true)
   }
 
   return (
-    <Box sx={{ flexGrow: 1, height: "auto", backgroundColor: "#dcfccf" }}>
+    <Box sx={{ flexGrow: 1, height: "auto", backgroundImage: `url(${background})`, backgroundSize: 'cover' }}>
       <Grid
         container
         spacing={{ xs: 1, md: 1 }}
@@ -51,8 +50,8 @@ function App() {
           <Box sx={{ height: "60vh" }}>
             <BagSelector capacity={bagCapacity} callback={(capacity) => setBagCapacity(capacity)} callbackWeight={(isFull) => { setIsFull(isFull) }} callbackItems={(selectedItems) => { setSelectedItems(selectedItems) }} />
           </Box>
-          <Box sx={{ height: "30vh" }}>
-            <DesasterCheckbox callback={(desastersArray) => { setChoosedDesasters(desastersArray) }} />
+          <Box sx={{ height: "30vh"}}>
+            <ScenarioCheckbox callback={(desastersArray) => { setChoosedDesasters(desastersArray) }} />
           </Box>
         </Grid>
         <Grid item xs={4} sm={8} md={6}>
@@ -64,7 +63,7 @@ function App() {
         <Grid item xs sm md>
           <Box m={5} sx={{ height: "60vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "space-between" }}>
             <SelectedList selectedItems={selectedItems} />
-            <CustomizedButton onClick={handleSubmitClick}>Resultado da sobrevivência</CustomizedButton>
+            <CustomizedButton onClick={handleSubmitClick}>Resultado da melhor escolha</CustomizedButton>
           </Box>
         </Grid>
       </Grid>

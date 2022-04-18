@@ -1,7 +1,7 @@
 const options = require("../data/events.json");
 const items = require("../data/items.json");
 
-export const knapSack = (selectedDesasters, bagCapacity) => {
+const knapSack = (selectedDesasters, bagCapacity) => {
   let weight = 0, itemIndex = 0, solution = [];
 
   let orderedItems = orderByPriority(selectedDesasters);
@@ -68,3 +68,5 @@ function orderByPriority(selectedDesasters) {
     return 0;
   });
 }
+
+console.log(knapSack([0, 1], 5))
