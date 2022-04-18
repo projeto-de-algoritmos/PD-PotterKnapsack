@@ -6,7 +6,6 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import CardMedia from '@mui/material/CardMedia';
 import { blueGrey, green } from '@mui/material/colors';
-import {ptBR} from '../utils/ptBR.js'
 
 const CustomCard = styled(Card)(() => ({
     'img:hover': {
@@ -20,31 +19,31 @@ export default function CustomizedCard(props) {
     const bgColor = props.isSelected ? green[400] : blueGrey[100]
     
     return <CustomCard {...props} sx={{ width: "fit-content" }}>
-        <Box sx={{ position: 'absolute', display: 'flex', flexDirection: 'column', minWidth: 175, backgroundColor: bgColor }}>
+        <Box sx={{ position: 'absolute', display: 'flex', flexDirection: 'column', minWidth: 220, backgroundColor: bgColor }}>
             <CardContent sx={{ flex: '1 0 auto' }}>
                 <Typography component="div" variant="button">
-                    {ptBR[props.item.name]}
+                    {props.item.name}
                 </Typography>
                 <Typography variant="subtitle2" color="text.secondary" component="div">
                     Peso: {props.item.weight}
                 </Typography>
                 <Typography variant="subtitle2" color="text.secondary" component="div">
-                    Armadura: {props.item.armor}
+                    Proteção: {props.item.protection}
                 </Typography>
                 <Typography variant="subtitle2" color="text.secondary" component="div">
                     Ataque: {props.item.attack}
                 </Typography>
                 <Typography variant="subtitle2" color="text.secondary" component="div">
-                    Proteção UV: {props.item.uv_protection}
+                    Mobilidadde: {props.item.mobility}
                 </Typography>
                 <Typography variant="subtitle2" color="text.secondary" component="div">
-                    Refrescância: {props.item.freshness}
+                    Furtividade: {props.item.stealth}
                 </Typography>
             </CardContent>
         </Box>
         <CardMedia
             component="img"
-            sx={{ position: 'absolute', width: 175 }}
+            sx={{ position: 'absolute', width: 220, height: 180 }}
             image={require('../assets/imagens/' + props.item.name.toLowerCase() + '.png')}
             alt={props.item.name}
         />

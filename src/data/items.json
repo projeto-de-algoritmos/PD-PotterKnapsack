@@ -1,92 +1,110 @@
 [
     {
         "id": 0,
-        "name": "Knife",
+        "name": "Dente de Basilisco",
         "weight": 1,
-        "armor": 0,
-        "attack": 2,
-        "uv_protection": 0,
-        "freshness": 0
+        "protection": 0,
+        "attack": 3,
+        "mobility": 0,
+        "stealth": 0
     },
     {
         "id": 1,
-        "name": "Crossbow",
-        "weight": 3,
-        "armor": 0,
-        "attack": 3,
-        "uv_protection": 0,
-        "freshness": 0
+        "name": "Pedra Filosofal",
+        "weight": 1,
+        "protection": 4,
+        "attack": 0,
+        "mobility": 0,
+        "stealth": 0
     },
     {
         "id": 2,
-        "name": "Fire Gun",
-        "weight": 5,
-        "armor": 0,
+        "name": "Varinha das Varinhas",
+        "weight": 1,
+        "protection": 3,
         "attack": 5,
-        "uv_protection": 0,
-        "freshness": 0
+        "mobility": 0,
+        "stealth": 0
     },
     {
         "id": 3,
-        "name": "Helmet",
-        "weight": 2,
-        "armor": 3,
-        "attack": 0,
-        "uv_protection": 1,
-        "freshness": 0
+        "name": "Espada de Grifinória",
+        "weight": 3,
+        "protection": 0,
+        "attack": 4,
+        "mobility": 0,
+        "stealth": 0
     },
     {
         "id": 4,
-        "name": "Ballistic Vest",
-        "weight": 3,
-        "armor": 4,
+        "name": "Desiluminador",
+        "weight": 1,
+        "protection": 0,
         "attack": 0,
-        "uv_protection": 2,
-        "freshness": 0
+        "mobility": 0,
+        "stealth": 3
     },
     {
         "id": 5,
-        "name": "Sunscreen",
-        "weight": 1,
-        "armor": 0,
+        "name": "Capa da Invisibilidade",
+        "weight": 2,
+        "protection": 0,
         "attack": 0,
-        "uv_protection": 3,
-        "freshness": 1
+        "mobility": 2,
+        "stealth": 5
     },
     {
         "id": 6,
-        "name": "Umbrella",
+        "name": "Nimbus 2000",
         "weight": 2,
-        "armor": 0,
-        "attack": 1,
-        "uv_protection": 3,
-        "freshness": 3
+        "protection": 0,
+        "attack": 0,
+        "mobility": 4,
+        "stealth": 0
     },
     {
         "id": 7,
-        "name": "Radiation Suit",
-        "weight": 4,
-        "armor": 1,
+        "name": "Poção Polissuco",
+        "weight": 1,
+        "protection": 0,
         "attack": 0,
-        "uv_protection": 5,
-        "freshness": 0
+        "mobility": 0,
+        "stealth": 4
     },
     {
         "id": 8,
-        "name": "Tree Seedling",
-        "weight": 2,
-        "armor": 0,
+        "name": "Mapa do Maroto",
+        "weight": 1,
+        "protection": 0,
         "attack": 0,
-        "uv_protection": 3,
-        "freshness": 4
+        "mobility": 4,
+        "stealth": 0
     },
     {
         "id": 9,
-        "name": "Caipirinha",
-        "weight": 1,
-        "armor": 0,
+        "name": "Vira Tempo",
+        "weight": 2,
+        "protection": 0,
         "attack": 0,
-        "uv_protection": 0,
-        "freshness": 5
+        "mobility": 5,
+        "stealth": 0
+    },
+    {
+        "id": 10,
+        "name": "Fawkes",
+        "weight": 4,
+        "protection": 5,
+        "attack": 3,
+        "mobility": 1,
+        "stealth": 0
+    },
+    {
+        "id": 11,
+        "name": "Nagini",
+        "weight": 5,
+        "protection": 4,
+        "attack": 5,
+        "mobility": 1,
+        "stealth": 0
     }
 ]

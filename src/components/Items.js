@@ -18,6 +18,8 @@ export default function Items(props) {
 
         props.selectedItems.map(selectedEl => {
             totalWeights += items.find(el => el.name === selectedEl.name).weight
+
+            return null;
         })
 
         return totalWeights
@@ -44,6 +46,8 @@ export default function Items(props) {
 
         selectedItems.map(seletedEl => {
             sumWeight += items.find((el) => el.name === seletedEl.name).weight
+            
+            return null;
         })
 
         return sumWeight >= props.bagCapacity
@@ -64,6 +68,8 @@ export default function Items(props) {
             weights = 0;
             oldSelectedItems.map(el => {
                 newSelectedItems = calculateRemainingWeight(newSelectedItems, el.name)
+            
+                return null;
             })
 
             console.log(newSelectedItems)

@@ -12,21 +12,21 @@ export default function DesasterCheckbox(props) {
   React.useEffect(() => {
     const callbackIndicesArray = checked.flatMap((bool, index) => bool ? index : [])
     props.callback(callbackIndicesArray)
-  }, [checked])
+  }, [checked, props])
 
-  const handleZombieChange = (event) => {
+  const handleDragoesChange = (event) => {
     setChecked([event.target.checked, checked[1], checked[2], checked[3]]);
   };
 
-  const handleNuclearAttacksChange = (event) => {
+  const handleZeladorFilchChange = (event) => {
     setChecked([checked[0], event.target.checked, checked[2], checked[3]]);
   };
 
-  const handleAssaultersChange = (event) => {
+  const handleMinisterioDaMagiaChange = (event) => {
     setChecked([checked[0], checked[1], event.target.checked, checked[3]]);
   };
 
-  const handleGlobalWarmingChange = (event) => {
+  const handleComensaisDaMorte = (event) => {
     setChecked([checked[0], checked[1], checked[2], event.target.checked]);
   };
 
@@ -46,27 +46,27 @@ export default function DesasterCheckbox(props) {
         <FormGroup>
           <FormControlLabel
             control={
-              <Checkbox checked={checked[0]} onChange={handleZombieChange} name="Zumbis" />
+              <Checkbox checked={checked[0]} onChange={handleDragoesChange} name="Dragões" />
             }
-            label="Zumbis"
+            label="Dragões"
           />
           <FormControlLabel
             control={
-              <Checkbox checked={checked[1]} onChange={handleNuclearAttacksChange} name="Ataques Nucleares" />
+              <Checkbox checked={checked[1]} onChange={handleZeladorFilchChange} name="Zelador Filch" />
             }
-            label="Ataques Nucleares"
+            label="Zelador Filch"
           />
           <FormControlLabel
             control={
-              <Checkbox checked={checked[2]} onChange={handleAssaultersChange} name="Saqueadores" />
+              <Checkbox checked={checked[2]} onChange={handleMinisterioDaMagiaChange} name="Ministério da Magia" />
             }
-            label="Saqueadores"
+            label="Ministério da Magia"
           />
           <FormControlLabel
             control={
-              <Checkbox checked={checked[3]} onChange={handleGlobalWarmingChange} name="Aquecimento Global" />
+              <Checkbox checked={checked[3]} onChange={handleComensaisDaMorte} name="Comensais da Morte" />
             }
-            label="Aquecimento Global"
+            label="Comensais da Morte"
           />
         </FormGroup>
       </FormControl>
