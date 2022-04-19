@@ -65,7 +65,7 @@ export default function ScenarioCheckbox(props) {
             control={
               <Checkbox checked={checked[2]} onChange={handleMinisterioDaMagiaChange} name="Ministério da Magia" />
             }
-            label="Ministério da Magia"
+            label="Torneio Tribuxo"
           />
           <FormControlLabel
             control={

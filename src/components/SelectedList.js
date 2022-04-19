@@ -19,7 +19,7 @@ export default function SelectedList(props) {
                     primary={item.name}
                     secondary={item.weight}
                     primaryTypographyProps={{
-                        color: COLORS.defaultSelected,
+                        color: COLORS.defaultColor,
                         fontSize: "14px"
                       }}
                 />
@@ -28,7 +28,7 @@ export default function SelectedList(props) {
     }
 
     const noItems = () => {
-        return (<Typography align="center" variant="caption" component="div" color={COLORS.defaultSelected}>Nenhum item selecionado</Typography>)
+        return (<Typography align="center" variant="caption" component="div" color={COLORS.defaultColor}>Nenhum item selecionado</Typography>)
     }
 
 

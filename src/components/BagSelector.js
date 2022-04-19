@@ -38,16 +38,16 @@ export default function BagSelector(props) {
       <img src={backpack} alt="backpack" width={"50%"} height={"50%"} max-width={"260px"} />
       <Stack spacing={5} direction="row" sx={{ margin: "5%" }}>
         <CustomizedButton
-          onClick={() => handleCapacityClick(5)}
-          selected={props.capacity === 5}
+          onClick={() => handleCapacityClick(6)}
+          selected={props.capacity === 6}
         >
-          5kg
+          6kg
         </CustomizedButton>
         <CustomizedButton
-          onClick={() => handleCapacityClick(7)}
-          selected={props.capacity === 7}
+          onClick={() => handleCapacityClick(8)}
+          selected={props.capacity === 8}
         >
-          7kg
+          8kg
         </CustomizedButton>
         <CustomizedButton
           onClick={() => handleCapacityClick(10)}
