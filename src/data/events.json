@@ -17,11 +17,11 @@
     },
     {
         "id": 2,
-        "name": "Ministério da Magia",
-        "protection": 2,
-        "attack": 0,
-        "mobility": 5,
-        "stealth": 2
+        "name": "Torneio Tribuxo",
+        "protection": 3,
+        "attack": 3,
+        "mobility": 4,
+        "stealth": 1
     },
     {
         "id": 3,
