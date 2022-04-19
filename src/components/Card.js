@@ -34,7 +34,7 @@ export default function CustomizedCard(props) {
                     Ataque: {props.item.attack}
                 </Typography>
                 <Typography variant="subtitle2" color="text.secondary" component="div">
-                    Mobilidadde: {props.item.mobility}
+                    Mobilidade: {props.item.mobility}
                 </Typography>
                 <Typography variant="subtitle2" color="text.secondary" component="div">
                     Furtividade: {props.item.stealth}
