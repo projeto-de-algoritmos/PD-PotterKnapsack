@@ -1,15 +1,16 @@
 import * as React from 'react';
+import { COLORS } from "../assets/consts/colors";
 import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
-import { amber } from '@mui/material/colors';
 
 const CustomButtom = styled(Button)(({ theme }) => ({
-  color: theme.palette.getContrastText(amber[50]),
+  color: theme.palette.getContrastText(COLORS.defaultColor),
   '&:hover': {
-    backgroundColor: amber[300],
+    backgroundColor: COLORS.buttonHover,
+    transition: "0.3s",
   },
 }));
 
 export default function CustomizedButton(props) {
-  return <CustomButtom {...props} sx={{backgroundColor: props.selected ? amber[500] : amber[50]}} size="large" variant="contained" />
+  return <CustomButtom {...props} sx={{backgroundColor: props.selected ? COLORS.buttonSelected: COLORS.defaultColor}} size="large" variant="contained" />
 }

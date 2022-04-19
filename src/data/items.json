@@ -12,7 +12,7 @@
         "id": 1,
         "name": "Pedra Filosofal",
         "weight": 1,
-        "protection": 4,
+        "protection": 3,
         "attack": 0,
         "mobility": 0,
         "stealth": 0
@@ -21,8 +21,8 @@
         "id": 2,
         "name": "Varinha das Varinhas",
         "weight": 1,
-        "protection": 3,
-        "attack": 5,
+        "protection": 1,
+        "attack": 3,
         "mobility": 0,
         "stealth": 0
     },
@@ -30,7 +30,7 @@
         "id": 3,
         "name": "Espada de Grifinória",
         "weight": 3,
-        "protection": 0,
+        "protection": 3,
         "attack": 4,
         "mobility": 0,
         "stealth": 0
@@ -51,15 +51,15 @@
         "protection": 0,
         "attack": 0,
         "mobility": 2,
-        "stealth": 5
+        "stealth": 4
     },
     {
         "id": 6,
         "name": "Nimbus 2000",
         "weight": 2,
-        "protection": 0,
+        "protection": 2,
         "attack": 0,
-        "mobility": 4,
+        "mobility": 3,
         "stealth": 0
     },
     {
@@ -69,7 +69,7 @@
         "protection": 0,
         "attack": 0,
         "mobility": 0,
-        "stealth": 4
+        "stealth": 3
     },
     {
         "id": 8,
@@ -77,8 +77,8 @@
         "weight": 1,
         "protection": 0,
         "attack": 0,
-        "mobility": 4,
-        "stealth": 0
+        "mobility": 2,
+        "stealth": 1
     },
     {
         "id": 9,
@@ -93,10 +93,10 @@
         "id": 10,
         "name": "Fawkes",
         "weight": 4,
-        "protection": 5,
-        "attack": 3,
-        "mobility": 1,
-        "stealth": 0
+        "protection": 3,
+        "attack": 2,
+        "mobility": 5,
+        "stealth": 2
     },
     {
         "id": 11,
@@ -104,7 +104,7 @@
         "weight": 5,
         "protection": 4,
         "attack": 5,
-        "mobility": 1,
-        "stealth": 0
+        "mobility": 3,
+        "stealth": 3
     }
 ]

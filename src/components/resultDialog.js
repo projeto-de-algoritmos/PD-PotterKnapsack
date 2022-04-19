@@ -27,7 +27,13 @@ export default function ResultDialog(props) {
             </DialogTitle>
             <DialogContent>
                 <DialogContentText>
-                    {props.content}
+                    {props.result}
+                </DialogContentText>
+                <DialogContentText>
+                    {props.diffHeader}
+                </DialogContentText>
+                <DialogContentText>
+                    {props.diffBottom}
                 </DialogContentText>
             </DialogContent>
             <DialogActions>

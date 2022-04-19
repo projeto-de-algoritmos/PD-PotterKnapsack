@@ -1,11 +1,13 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
+import { COLORS } from "../assets/consts/colors";
 import { Typography } from "@mui/material";
 import Stack from "@mui/material/Stack";
 import CustomizedButton from "./Button";
 import backpack from "../assets/imagens/mochila.png";
 
 export default function BagSelector(props) {
+
   const handleCapacityClick = (newCapacity) => {
     props.callback(newCapacity);
     props.callbackWeight(false)
@@ -21,30 +23,31 @@ export default function BagSelector(props) {
         alignItems: "center",
         justifyContent: "center",
         alignContent: "space-between",
+        marginLeft: "10%"
       }}
     >
       <Typography
         sx={{ fontSize: 18 }}
-        color="black"
+        color={COLORS.defaultColor}
         variant="h4"
         textAlign={"center"}
         margin={"5%"}
       >
-        Selecione o peso suportado pela mochila que você irá levar
+        Selecione o peso suportado pela bolsa da Hermione Granger
       </Typography>
       <img src={backpack} alt="backpack" width={"50%"} height={"50%"} max-width={"260px"} />
       <Stack spacing={5} direction="row" sx={{ margin: "5%" }}>
         <CustomizedButton
-          onClick={() => handleCapacityClick(5)}
-          selected={props.capacity === 5}
+          onClick={() => handleCapacityClick(6)}
+          selected={props.capacity === 6}
         >
-          5kg
+          6kg
         </CustomizedButton>
         <CustomizedButton
-          onClick={() => handleCapacityClick(7)}
-          selected={props.capacity === 7}
+          onClick={() => handleCapacityClick(8)}
+          selected={props.capacity === 8}
         >
-          7kg
+          8kg
         </CustomizedButton>
         <CustomizedButton
           onClick={() => handleCapacityClick(10)}
