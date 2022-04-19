@@ -23,7 +23,7 @@ export default function Items(props) {
 
             return null;
         })
-
+        props.callbackActualWeight(totalWeights)
         return totalWeights
     }
 
@@ -40,7 +40,7 @@ export default function Items(props) {
             props.callbackWeight(true)
             
         setErrorMessage("")
-        return [...arr, {name: item}]
+        return [...arr, {name: item, weight: newWeight}]
     }
 
     function calculateIsFull(selectedItems){

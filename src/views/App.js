@@ -14,6 +14,7 @@ import "./App.css";
 function App() {
   const [selectedItems, setSelectedItems] = React.useState([]);
   const [bagCapacity, setBagCapacity] = React.useState(6);
+  const [actualWeight, setActualWeight] = React.useState(0)
   const [choosedScenarios, setChoosedScenarios] = React.useState([])
   const [isFull, setIsFull] = React.useState(false)
   const [isOpenDialog, setIsOpenDialog] = React.useState(false)
@@ -69,13 +70,13 @@ function App() {
         </Grid>
         <Grid item xs={4} sm={8} md={6}>
           <Box sx={{ height: "100vh" }}>
-            <Items selectedItems={selectedItems} bagCapacity={bagCapacity} isFull={isFull} callbackWeight={(isFull) => { setIsFull(isFull) }} callback={(selectedItems) => { setSelectedItems(selectedItems) }} />
+            <Items selectedItems={selectedItems} bagCapacity={bagCapacity} isFull={isFull} callbackWeight={(isFull) => { setIsFull(isFull) }} callbackActualWeight={(actualWeight) => {setActualWeight(actualWeight)}} callback={(selectedItems) => { setSelectedItems(selectedItems) }} />
             <ResultDialog result={resultContent} diffHeader={resultHeaderContent} diffBottom={resultBottomContent} openDialog={isOpenDialog} callbackOpenDialog={(value) => setIsOpenDialog(value)} />
           </Box>
         </Grid>
         <Grid item xs sm md>
           <Box m={5} sx={{ height: "60vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "space-between" }}>
-            <SelectedList selectedItems={selectedItems} />
+            <SelectedList selectedItems={selectedItems} actualWeight={actualWeight} />
             <CustomizedButton onClick={handleSubmitClick}>Resultado da melhor escolha</CustomizedButton>
           </Box>
         </Grid>
